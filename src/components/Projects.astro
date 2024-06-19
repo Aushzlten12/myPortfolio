@@ -6,6 +6,9 @@ import Stripe from "./tags/Stripe.astro";
 import Supabase from "./tags/Supabase.astro";
 import Mongodb from "./tags/Mongodb.astro";
 import Python from "./tags/Python.astro";
+import LinkProject from "./LinkProject.astro";
+import GitHub from "./icons/GitHub.astro";
+import Link from "./icons/Link.astro";
 
 const TAGS = {
   NEXT: {
@@ -77,11 +80,11 @@ const PROJECTS = [
 ---
 
 {
-  PROJECTS.map(({ title, description, tags, image }) => (
+  PROJECTS.map(({ title, description, tags, image, github, link }) => (
     <article class="mb-10">
       <h3 class="text-2xl font-semibold text-yellow-200/90 mb-2">{title}</h3>
       <p class="text-lg mb-4 text-pretty">{description}</p>
-      <ul class="flex gap-x-3 flex-row">
+      <ul class="md:flex gap-3 grid grid-cols-2 mb-2 md:gap-0">
         {tags.map((tag) => (
           <li>
             <span
@@ -98,6 +101,16 @@ const PROJECTS = [
         src={image}
         alt={`Captura de pantalla del proyecto ${image}`}
       />
+      <div class="flex flex-row gap-x-2 mt-3">
+        <LinkProject href={github}>
+          <GitHub class="size-4 md:size-6" />
+          Ver Repositorio
+        </LinkProject>
+        <LinkProject href={link}>
+          <Link class="size-4 md:size-6" />
+          Ver más
+        </LinkProject>
+      </div>
     </article>
   ))
 }
