@@ -1,0 +1,22 @@
+---
+import WorkItem from "./WorkItem.astro";
+
+const EXPERIENCE = [
+  {
+    date: "Actualmente ...",
+    title: "Voluntariado en tutoría académica - UNI",
+    description:
+      "Ayudar a alumnos en riesgo a aprobar sus cursos brindandoles clases especificamente sobre Base de Datos, dos horas semanalmente",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-14 ms-4">
+        <WorkItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

@@ -1,0 +1,103 @@
+---
+import Next from "./tags/Next.astro";
+import Tailwind from "./tags/Tailwind.astro";
+import React from "./tags/React.astro";
+import Stripe from "./tags/Stripe.astro";
+import Supabase from "./tags/Supabase.astro";
+import Mongodb from "./tags/Mongodb.astro";
+import Python from "./tags/Python.astro";
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: Next,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-black text-[#73bcf6]",
+    icon: Tailwind,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-black text-sky-800",
+    icon: React,
+  },
+  STRIPE: {
+    name: "Stripe",
+    class: "bg-black text-indigo-800",
+    icon: Stripe,
+  },
+  SUPABASE: {
+    name: "Supabase",
+    class: "bg-black text-green-800",
+    icon: Supabase,
+  },
+  MONGODB: {
+    name: "MongoDB",
+    class: "bg-black text-green-800",
+    icon: Mongodb,
+  },
+  PYTHON: {
+    name: "Python",
+    class: "bg-black text-yellow-300",
+    icon: Python,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Spotify Clone",
+    description:
+      "Desarrollar un clon de Spotify en el que se puede escuchar y subir música, darle me gusta. Además se integro Stripe para pagos.",
+    link: "https://spotify-clone-kwhb.vercel.app/",
+    github: "https://github.com/Aushzlten12/Spotify-Clone",
+    image: "/images/projects/spotify_clone.webp",
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.REACT, TAGS.STRIPE, TAGS.SUPABASE],
+  },
+  {
+    title: "Airbnb Clone",
+    description:
+      "Desarrollar un clon de Airbnb en el que se puede subir lugares para que otros usuarios puedan rentar, darle me gusta. Además se integro Stripe para pagos.",
+    link: "#",
+    github: "https://github.com/Aushzlten12/Airbnb",
+    image: "",
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.REACT, TAGS.STRIPE, TAGS.MONGODB],
+  },
+  {
+    title: "Juego de Bienestar y salud",
+    description:
+      "Juego desarrollado con Pygame enfocado en el ODS de bienestar y salud.",
+    link: "#",
+    github: "",
+    image: "",
+    tags: [TAGS.PYTHON],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ title, description, tags, image }) => (
+    <article class="mb-10">
+      <h3 class="text-2xl font-semibold text-yellow-200/90 mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex gap-x-3 flex-row">
+        {tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-2 items-center rounded-full text-xs ${tag.class} py-1 px-2`}
+            >
+              <tag.icon class="size-6" />
+              <p class="font-semibold">{tag.name}</p>
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        class="rounded shadow-2xl shadow-white/10"
+        src={image}
+        alt={`Captura de pantalla del proyecto ${image}`}
+      />
+    </article>
+  ))
+}
