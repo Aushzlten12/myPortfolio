@@ -1,11 +1,58 @@
-<header class="flex justify-center py-5 w-full xl:w-[1120px] mx-auto">
+<header
+  id="main-header"
+  class="flex justify-center py-5 w-fit mx-auto sticky top-3 z-50 px-6 rounded-xl bg-slate-800"
+>
   <nav
-    class="flex flex-row sm:gap-x-10 gap-x-5 opacity-80 sm:text-base text-[14px]"
+    class="flex
+  flex-row
+  sm:gap-x-10
+  gap-x-5
+  opacity-80
+  sm:text-base
+  text-[14px]"
   >
-    <a href="#top">Inicio</a>
-    <a href="#experiencia">Experiencia</a>
-    <a href="#proyectos">Proyectos</a>
-    <a href="#sobre-mi">Sobre mí</a>
-    <a href="mailto:josepachas1604@gmail.com">Contacto</a>
+    <a href="#top" id="link-top" class="nav-link hover:text-yellow-500/90"
+      >Inicio</a
+    >
+    <a
+      href="#experiencia"
+      id="link-experiencia"
+      class="nav-link hover:text-yellow-500/90">Experiencia</a
+    >
+    <a
+      href="#proyectos"
+      id="link-proyectos"
+      class="nav-link hover:text-yellow-500/90">Proyectos</a
+    >
+    <a
+      href="#sobre-mi"
+      id="link-sobre-mi"
+      class="nav-link hover:text-yellow-500/90">Sobre mí</a
+    >
+    <a
+      href="mailto:josepachas1604@gmail.com"
+      id="link-contacto"
+      class="hover:text-yellow-500/90">Contacto</a
+    >
   </nav>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const links = document.querySelectorAll(".nav-link");
+
+      function updateLinkState() {
+        links.forEach((link) => {
+          if (window.location.hash === link.getAttribute("href")) {
+            link.classList.add("text-yellow-500");
+          } else {
+            link.classList.remove("text-yellow-500");
+          }
+        });
+      }
+
+      updateLinkState();
+
+      window.addEventListener("hashchange", updateLinkState);
+    });
+  </script>
 </header>
