@@ -38,14 +38,18 @@ const { description, title } = Astro.props;
   }
 
   body {
-    background-image: linear-gradient(
-      to right top,
-      #030b18,
-      #0b111d,
-      #111622,
-      #151b27,
-      #1a1f2c
-    );
+    background: #2b5876; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #4e4376,
+      #2b5876
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #4e4376,
+      #2b5876
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     display: flex;
     min-height: 100vh;
     flex-direction: column;

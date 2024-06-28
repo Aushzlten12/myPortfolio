@@ -1,6 +1,6 @@
 <header
   id="main-header"
-  class="flex justify-center py-5 w-fit mx-auto sticky top-3 z-50 px-6 rounded-xl bg-slate-800"
+  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
 >
   <nav
     class="flex
@@ -9,30 +9,38 @@
   gap-x-5
   opacity-80
   sm:text-base
+  px-5
+  rounded-full
+  text-gray-100
+  bg-[#2b5876]
   text-[14px]"
   >
-    <a href="#top" id="link-top" class="nav-link hover:text-yellow-500/90"
+    <a href="#top" id="link-top" class="nav-link hover:text-yellow-500"
       >Inicio</a
     >
     <a
       href="#experiencia"
       id="link-experiencia"
-      class="nav-link hover:text-yellow-500/90">Experiencia</a
+      aria-label="experiencia"
+      class="nav-link hover:text-yellow-500">Experiencia</a
     >
     <a
       href="#proyectos"
+      aria-label="proyectos"
       id="link-proyectos"
-      class="nav-link hover:text-yellow-500/90">Proyectos</a
+      class="nav-link hover:text-yellow-500">Proyectos</a
     >
     <a
       href="#sobre-mi"
+      aria-label="sobre-mi"
       id="link-sobre-mi"
-      class="nav-link hover:text-yellow-500/90">Sobre mí</a
+      class="nav-link hover:text-yellow-500">Sobre mí</a
     >
     <a
       href="mailto:josepachas1604@gmail.com"
       id="link-contacto"
-      class="hover:text-yellow-500/90">Contacto</a
+      aria-label="contacto"
+      class="hover:text-yellow-500">Contacto</a
     >
   </nav>
 
