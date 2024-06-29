@@ -62,5 +62,33 @@
 
       window.addEventListener("hashchange", updateLinkState);
     });
+    window.addEventListener("scroll", function () {
+      const link_1 = document.querySelector("#link-top");
+      const link_2 = document.querySelector("#link-experiencia");
+      const link_3 = document.querySelector("#link-proyectos");
+      const link_4 = document.querySelector("#link-sobre-mi");
+
+      if (window.scrollY > 0 && window.scrollY < 696) {
+        link_2?.classList.remove("text-yellow-500");
+        link_3?.classList.remove("text-yellow-500");
+        link_4?.classList.remove("text-yellow-500");
+        link_1?.classList.add("text-yellow-500");
+      } else if (window.scrollY >= 696 && window.scrollY < 1089) {
+        link_1?.classList.remove("text-yellow-500");
+        link_3?.classList.remove("text-yellow-500");
+        link_4?.classList.remove("text-yellow-500");
+        link_2?.classList.add("text-yellow-500");
+      } else if (window.scrollY >= 1089 && window.scrollY < 3294) {
+        link_2?.classList.remove("text-yellow-500");
+        link_4?.classList.remove("text-yellow-500");
+        link_1?.classList.remove("text-yellow-500");
+        link_3?.classList.add("text-yellow-500");
+      } else if (window.scrollY >= 3294) {
+        link_3?.classList.remove("text-yellow-500");
+        link_1?.classList.remove("text-yellow-500");
+        link_2?.classList.remove("text-yellow-500");
+        link_4?.classList.add("text-yellow-500");
+      }
+    });
   </script>
 </header>
